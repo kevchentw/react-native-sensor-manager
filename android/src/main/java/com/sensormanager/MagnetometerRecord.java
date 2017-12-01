@@ -67,7 +67,7 @@ public class MagnetometerRecord implements SensorEventListener {
         if (mySensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
             long curTime = System.currentTimeMillis();
             i++;
-            if ((curTime - lastUpdate) > 92) {
+            if ((curTime - lastUpdate) > delay) {
                 i = 0;
 				map.putDouble("x", sensorEvent.values[0]);
 				map.putDouble("y", sensorEvent.values[1]);
